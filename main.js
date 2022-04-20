@@ -9,23 +9,32 @@ gameBoard = document.querySelector('#gameBoard');
 gameBoard.addEventListener('click', takeATurn);
 
 //OBJ INSTANCE DECLARATIONS
-var nachoPlayer = new Player('nacho', true);
-var esqueletoPlayer = new Player('esqueleto', false);
+var nachoPlayer = new Player('Nacho', true);
+var esqueletoPlayer = new Player('Esqueleto', false);
 var game = new Game();
 
 //FUNCTIONS
 
 function startNewGame() {
   game.players.push(nachoPlayer, esqueletoPlayer);
-  game.whosTurn = nachoPlayer
+  game.whosTurn = nachoPlayer;
 }
 startNewGame();
 
 function takeATurn(event) {
   var player = game.whosTurn;
-    game.gameSpacesOccupied[event.target.id] = player.id;
-    console.log(game.gameSpacesOccupied);
-    event.target.innerHTML = player.token;
-    checkForWin();
-    switchPlayers();
+  announcer.innerText = `${player.id}'s Turn!`
+  game.gameSpacesOccupied[event.target.id] = player.id;
+  console.log(game.gameSpacesOccupied);
+  event.target.innerHTML = player.token;
+  // checkForWin();
+  switchPlayer();
+}
+
+function switchPlayer() {
+  if (game.whosTurn === nachoPlayer) {
+    game.whosTurn = esqueletoPlayer;
+  } else if (game.whosTurn === esqueletoPlayer) {
+    game.whosTurn = nachoPlayer;
+  }
 }
