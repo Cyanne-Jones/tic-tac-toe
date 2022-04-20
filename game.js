@@ -13,7 +13,6 @@ class Game {
       gameBox9: null,
     };
     this.whosTurn = '';
-
   }
   updateSpaces(player, whereClicked) {
     this.gameSpacesOccupied[whereClicked] = player;
