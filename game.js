@@ -15,7 +15,7 @@ class Game {
     this.whosTurn = '';
 
   }
-  updateSpaces() {
-    
+  updateSpaces(player, whereClicked) {
+    this.gameSpacesOccupied[whereClicked] = player;
   }
 }
