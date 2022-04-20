@@ -5,12 +5,14 @@ class Player {
     this.isFirst = isFirst;
     this.currentTurn = isFirst;
 
-    if (this.id === 'nacho') {
+    if (name === 'Nacho') {
       this.token = `<img class="nacho-game-piece game-piece"
       alt="nacho-libre-game-piece" src="./assets/nacho.png">`
-    } else if (this.id === 'esqueleto') {
+    } else if (name === 'Esqueleto') {
       this.token = `<img class="esqueleto-game-piece game-piece"
       alt="esqueleto-game-piece" src="./assets/esqueleto.png">`
+    } else {
+      this.token = 'fuck'
     }
 
   }

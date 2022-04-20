@@ -113,7 +113,18 @@ main,
   grid-row: 3;
 }
 
-.game-Box1 {
+.game-Box9 {
   grid-column: 3;
   grid-row: 3;
+}
+
+.game-piece {
+  height: 60px;
+  width: 60px;
+}
+
+.game-box {
+  display: flex;
+  justify-content: center;
+	align-items: center;
 }
