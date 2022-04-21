@@ -77,10 +77,8 @@ startNewGame();
 
 
 function takeATurn(event) {
-    //console.log('before', event.target.classList.contains('occupied'))
-    if (!event.target.classList.contains('occupied')) {
-      event.target.classList.add('occupied');
-      //console.log('after', event.target.classList.contains('occupied'))
+    if ((!game.spacesOccupied.includes(event.target.id)) && (!event.target.classList.contains('game-piece'))) {
+      game.spacesOccupied.push(event.target.id);
       game.updatePlayerSpaces()
       event.target.innerHTML = game.whosTurn.token;
       game.checkForWin();
@@ -89,4 +87,4 @@ function takeATurn(event) {
     } else {
        alert('Choose an empty spot, silly goose!')
   }
-}
+};
