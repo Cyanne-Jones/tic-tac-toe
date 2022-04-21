@@ -52,7 +52,7 @@ main,
   font-size: 37px;
 }
 
-.gameBoard {
+.game-Board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0px;
@@ -61,59 +61,74 @@ main,
   width: 60%;
 }
 
-.gameBox4,
-.gameBox6 {
+.game-Box4,
+.game-Box6 {
   border-top: solid rgba(202, 68, 76, 1) 4px;
   border-bottom: solid rgba(202, 68, 76, 1) 4px;
 }
 
-.gameBox2,
-.gameBox8 {
+.game-Box2,
+.game-Box8 {
   border-left: solid rgba(202, 68, 76, 1) 4px;
   border-right: solid rgba(202, 68, 76, 1) 4px;
 }
 
-.gameBox1 {
+.game-Box1 {
   grid-column: 1;
   grid-row: 1;
 }
 
-.gameBox2 {
+.game-Box2 {
   grid-column: 2;
   grid-row: 1;
 }
 
-.gameBox3 {
+.game-Box3 {
   grid-column: 3;
   grid-row: 1;
 }
 
-.gameBox4 {
+.game-Box4 {
   grid-column: 1;
   grid-row: 2;
 }
 
-.gameBox5 {
+.game-Box5 {
   grid-column: 2;
   grid-row: 2;
   border: solid rgba(202, 68, 76, 1) 4px;
 }
 
-.gameBox6 {
+.game-Box6 {
   grid-column: 3;
   grid-row: 2;
 }
 
-.gameBox7 {
+.game-Box7 {
   grid-column: 1;
   grid-row: 3;
 }
-.gameBox8 {
+.game-Box8 {
   grid-column: 2;
   grid-row: 3;
 }
 
-.gameBox1 {
+.game-Box9 {
   grid-column: 3;
   grid-row: 3;
+}
+
+.game-piece {
+  height: 60px;
+  width: 60px;
+}
+
+.game-box {
+  display: flex;
+  justify-content: center;
+	align-items: center;
+}
+
+.occupied {
+  background-color: cyan;
 }
