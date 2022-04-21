@@ -17,25 +17,20 @@ class Game {
     }
   }
 
-  updatePlayerSpaces() {
-    if (this.whosTurn === nachoPlayer) {
-      nachoPlayer.spacesOccupiedByPlayer.push(event.target.id);
-      nachoPlayer.spacesOccupiedByPlayer;
-    } else if (this.whosTurn === esqueletoPlayer) {
-      esqueletoPlayer.spacesOccupiedByPlayer.push(event.target.id);
-      esqueletoPlayer.spacesOccupiedByPlayer;
-    }
+  updateSpacesOccupied(event) {
+    this.spacesOccupied.push(event.target.id);
+    this.whosTurn.spacesOccupiedByPlayer.push(event.target.id);
   };
 
   checkForWin() {
     for (var i = 0; i < winningGameBoxCombosArray.length; i++) {
-      if(winningGameBoxCombosArray[i].sort().join(',') === nachoPlayer.spacesOccupiedByPlayer.sort().join(',')) {
-        return console.log('nacho won')
+      if (winningGameBoxCombosArray[i].sort().join(',') === nachoPlayer.spacesOccupiedByPlayer.sort().join(',')) {
+        return true
       };
     }
-    for (var i = 0; i < winningGameBoxCombosObj.length; i++) {
+    for (var i = 0; i < winningGameBoxCombosArray.length; i++) {
       if (winningGameBoxCombosArray[i].sort().join(',') === esqueletoPlayer.spacesOccupiedByPlayer) {
-        return console.log('esq won')
+        return true
       };
     }
   }
