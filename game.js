@@ -27,7 +27,7 @@ class Game {
 
   checkForWin() {
     for (var i = 0; i < winningGameBoxCombosArray.length; i++) {
-      if (winningGameBoxCombosArray[i].sort().join(',') === this.whosTurn.spacesOccupiedByPlayer.sort().join(',')) {
+      if (winningGameBoxCombosArray[i].every(element => this.whosTurn.spacesOccupiedByPlayer.includes(element))) {
         return this.whosTurn
       };
     }
@@ -35,7 +35,6 @@ class Game {
 
   updateWins() {
     this.whosTurn.increaseWins();
-    console.log(this.whosTurn.wins);
   };
 
   checkIfOccupiedSpace(event) {
@@ -49,14 +48,6 @@ class Game {
     resetSpacesOccupied() {
       this.spacesOccupied = [];
     };
-
-    // restartGame() {
-    //   this.resetSpacesOccupied();
-    //   this.resetPlayerSpacesOccupied();
-    //   this.changeWhosFirst();
-    //   updateAnnouncerWithNewPlayer();
-    //   clearGameBoard();
-    // };
 
     resetPlayerSpacesOccupied() {
       nachoPlayer.spacesOccupiedByPlayer = [];
@@ -82,7 +73,7 @@ class Game {
         this.whosTurn.increaseWins();
         updateAnnouncerWithWin();
         updateWinText(this.checkForWin());
-        setTimeout(restartGame, 3000);
+        setTimeout(restartGame, 2000);
         return;
       }
       this.switchPlayer();

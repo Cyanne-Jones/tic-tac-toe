@@ -12,8 +12,7 @@ var gameBox7 = document.querySelector('#gameBox7');
 var gameBox8 = document.querySelector('#gameBox8');
 var gameBox9 = document.querySelector('#gameBox9');
 var gameBoxes = document.querySelectorAll('.game-box');
-
-gameBoard = document.querySelector('#gameBoard');
+var gameBoard = document.querySelector('#gameBoard');
 
 //EVENT LISTENERS
 gameBoard.addEventListener('click', takeATurn);
