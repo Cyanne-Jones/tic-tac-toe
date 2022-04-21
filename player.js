@@ -3,13 +3,12 @@ class Player {
     this.id = name;
     this.wins = 0;
     this.isFirst = isFirst;
-    this.currentTurn = isFirst;
     this.spacesOccupiedByPlayer = [];
 
-    if (name === 'Nacho') {
+    if (this.id === 'Nacho') {
       this.token = `<img class="nacho-game-piece game-piece"
       alt="nacho-libre-game-piece" src="./assets/nacho.png">`
-    } else if (name === 'Esqueleto') {
+    } else if (this.id === 'Esqueleto') {
       this.token = `<img class="esqueleto-game-piece game-piece"
       alt="esqueleto-game-piece" src="./assets/esqueleto.png">`
     };
