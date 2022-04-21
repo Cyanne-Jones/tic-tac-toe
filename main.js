@@ -39,17 +39,6 @@ var winningGameBoxCombosArray = [
 
 game.startNewGame();
 
-// function takeATurn(event) {
-//     if ((!game.spacesOccupied.includes(event.target.id)) && (!event.target.classList.contains('game-piece'))) {
-//       game.continueTurn(event)
-//       event.target.innerHTML = game.whosTurn.token;
-//       game.switchPlayer();
-//       updateAnnouncerWithNewPlayer();
-//     } else {
-//        alert('Choose an empty spot, silly goose!')
-//   }
-// };
-
 function takeATurn(event) {
   game.checkIfOccupiedSpace(event);
 }
@@ -72,4 +61,8 @@ function updateWinText(winner) {
   } else if (winner === esqueletoPlayer) {
     esqueletoWinsText.innerText = `${esqueletoPlayer.wins} win`
   }
+}
+
+function clearGameBoard() {
+  gameBoxes.innerHTML = '';
 }

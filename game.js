@@ -40,7 +40,7 @@ class Game {
       this.whosTurn.increaseWins();
       updateAnnouncerWithWin();
       updateWinText(this.checkForWin());
-      //this.restartGame();
+      setTimeout(restartGame, 3000);
       return;
     }
     this.switchPlayer();
@@ -59,9 +59,32 @@ class Game {
       }
     }
 
-    // restartGame() {
-    //   resetSpacesOccupied();
-    //   resetPlayerSpacesOccupied();
-    //   changeWhosFirst();
-    // }
+    restartGame() {
+      this.resetSpacesOccupied();
+      this.resetPlayerSpacesOccupied();
+      this.changeWhosFirst();
+      updateAnnouncerWithNewPlayer();
+      clearGameBoard();
+    }
+
+    resetSpacesOccupied() {
+      this.spacesOccupied = [];
+    };
+
+    resetPlayerSpacesOccupied() {
+      nachoPlayer.spacesOccupiedByPlayer = [];
+      esqueletoPlayer.spacesOccupiedByPlayer = [];
+    };
+
+    changeWhosFirst() {
+      if (nachoPlayer.isFirst) {
+        esqueletoPlayer.isFirst = true
+        nachoPlayer.isFirst = false;
+        this.whosTurn = esqueletoPlayer
+      } else if (esqueletoPlayer.isFirst) {
+        nachoPlayer.isFirst = true
+        esqueletoPlayer.isFirst = false
+        this.whosTurn = nachoPlayer;
+      }
+    }
   }
