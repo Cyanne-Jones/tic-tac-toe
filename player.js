@@ -11,12 +11,10 @@ class Player {
     } else if (name === 'Esqueleto') {
       this.token = `<img class="esqueleto-game-piece game-piece"
       alt="esqueleto-game-piece" src="./assets/esqueleto.png">`
-    } else {
-      this.token = 'fuck'
-    }
+    };
 
   }
   increaseWins() {
     this.wins++;
   };
-}
+};
