@@ -4,6 +4,7 @@ class Player {
     this.wins = 0;
     this.isFirst = isFirst;
     this.currentTurn = isFirst;
+    this.spacesOccupiedByPlayer = [];
 
     if (name === 'Nacho') {
       this.token = `<img class="nacho-game-piece game-piece"

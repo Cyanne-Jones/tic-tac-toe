@@ -14,48 +14,6 @@ var esqueletoPlayer = new Player('Esqueleto', false);
 var game = new Game();
 
 //GLOBAL VARIABLES
-
-var winningGameBoxCombosObj = [
-  {
-    gameBox1: true,
-    gameBox2: true,
-    gameBox3: true
-  },
-  {
-    gameBox4: true,
-    gameBox5: true,
-    gameBox6: true
-  },
-  {
-    gameBox7: true,
-    gameBox8: true,
-    gameBox9: true
-  },
-  {
-    gameBox1: true,
-    gameBox4: true,
-    gameBox7: true
-  },
-  {
-    gameBox2: true,
-    gameBox5: true,
-    gameBox8: true
-  },
-  {
-    gameBox3: true,
-    gameBox6: true,
-    gameBox9: true
-  },
-  {
-    gameBox1: true,
-    gameBox5: true,
-    gameBox9: true
-  },
-  {
-    gameBox3: true,
-    gameBox5: true,
-    gameBox7: true
-  }];
 var winningGameBoxCombosArray = [
   ['gameBox1', 'gameBox2', 'gameBox3'],
   ['gameBox4', 'gameBox5', 'gameBox6'],
@@ -77,16 +35,15 @@ startNewGame();
 
 
 function takeATurn(event) {
-    console.log('before', event.target.classList.contains('occupied'))
-    if (!event.target.classList.contains('occupied')) {
-      event.target.classList.add('occupied');
-      console.log('after', event.target.classList.contains('occupied'))
-      game.updatePlayerSpaces()
+    if ((!game.spacesOccupied.includes(event.target.id)) && (!event.target.classList.contains('game-piece'))) {
+      game.updateSpacesOccupied(event)
       event.target.innerHTML = game.whosTurn.token;
-      game.checkForWin();
+      if (game.checkForWin()) {
+        return announcer.innerText = `${game.whosTurn.id} won!`
+      }
       game.switchPlayer();
       announcer.innerText = `${game.whosTurn.id}'s Turn!`
     } else {
        alert('Choose an empty spot, silly goose!')
   }
-}
+};
