@@ -38,7 +38,7 @@ class Game {
     }
   }
 
-  updateDataModelUponTurn() {
+  updatePlayerSpaces() {
     if (this.whosTurn === nachoPlayer) {
       this.spacesOccupiedByNacho[event.target.id] = true;
     } else if (this.whosTurn === esqueletoPlayer) {

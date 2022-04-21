@@ -128,3 +128,7 @@ main,
   justify-content: center;
 	align-items: center;
 }
+
+.occupied {
+  background-color: cyan;
+}

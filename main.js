@@ -77,9 +77,16 @@ startNewGame();
 
 
 function takeATurn(event) {
-  game.updateDataModelUponTurn()
-  event.target.innerHTML = game.whosTurn.token;
-  game.checkForWin();
-  game.switchPlayer();
-  announcer.innerText = `${game.whosTurn.id}'s Turn!`
+    console.log('before', event.target.classList.contains('occupied'))
+    if (!event.target.classList.contains('occupied')) {
+      event.target.classList.add('occupied');
+      console.log('after', event.target.classList.contains('occupied'))
+      game.updatePlayerSpaces()
+      event.target.innerHTML = game.whosTurn.token;
+      game.checkForWin();
+      game.switchPlayer();
+      announcer.innerText = `${game.whosTurn.id}'s Turn!`
+    } else {
+       alert('Choose an empty spot, silly goose!')
+  }
 }
