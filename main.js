@@ -64,5 +64,21 @@ function updateWinText(winner) {
 }
 
 function clearGameBoard() {
-  gameBoxes.innerHTML = '';
+  gameBox1.innerHTML = '';
+  gameBox2.innerHTML = '';
+  gameBox3.innerHTML = '';
+  gameBox4.innerHTML = '';
+  gameBox5.innerHTML = '';
+  gameBox6.innerHTML = '';
+  gameBox7.innerHTML = '';
+  gameBox8.innerHTML = '';
+  gameBox9.innerHTML = '';
 }
+
+function restartGame() {
+  game.resetSpacesOccupied();
+  game.resetPlayerSpacesOccupied();
+  game.changeWhosFirst();
+  updateAnnouncerWithNewPlayer();
+  clearGameBoard();
+};

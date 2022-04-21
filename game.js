@@ -3,12 +3,12 @@ class Game {
     this.players = [];
     this.spacesOccupied = [];
     this.whosTurn = '';
-  }
+  };
 
   startNewGame() {
     this.players.push(nachoPlayer, esqueletoPlayer);
     this.whosTurn = nachoPlayer;
-  }
+  };
 
   switchPlayer() {
     if (this.whosTurn === nachoPlayer) {
@@ -17,7 +17,7 @@ class Game {
       this.whosTurn = nachoPlayer;
     }
     updateAnnouncerWithNewPlayer();
-  }
+  };
 
   updateSpacesOccupied(event) {
     this.spacesOccupied.push({[event.target.id]: [this.whosTurn]});
@@ -33,23 +33,10 @@ class Game {
     }
   };
 
-  continueTurn(event) {
-    this.updateSpacesOccupied(event);
-    updateIcon(event);
-    if (this.checkForWin()) {
-      this.whosTurn.increaseWins();
-      updateAnnouncerWithWin();
-      updateWinText(this.checkForWin());
-      setTimeout(restartGame, 3000);
-      return;
-    }
-    this.switchPlayer();
-  }
-
   updateWins() {
     this.whosTurn.increaseWins();
     console.log(this.whosTurn.wins);
-  }
+  };
 
   checkIfOccupiedSpace(event) {
       if ((!this.spacesOccupied.includes(event.target.id)) && (!event.target.classList.contains('game-piece'))) {
@@ -57,19 +44,19 @@ class Game {
       }  else {
         alert('Choose an empty spot, silly goose!')
       }
-    }
-
-    restartGame() {
-      this.resetSpacesOccupied();
-      this.resetPlayerSpacesOccupied();
-      this.changeWhosFirst();
-      updateAnnouncerWithNewPlayer();
-      clearGameBoard();
-    }
+    };
 
     resetSpacesOccupied() {
       this.spacesOccupied = [];
     };
+
+    // restartGame() {
+    //   this.resetSpacesOccupied();
+    //   this.resetPlayerSpacesOccupied();
+    //   this.changeWhosFirst();
+    //   updateAnnouncerWithNewPlayer();
+    //   clearGameBoard();
+    // };
 
     resetPlayerSpacesOccupied() {
       nachoPlayer.spacesOccupiedByPlayer = [];
@@ -86,5 +73,19 @@ class Game {
         esqueletoPlayer.isFirst = false
         this.whosTurn = nachoPlayer;
       }
-    }
-  }
+    };
+
+    continueTurn(event) {
+      this.updateSpacesOccupied(event);
+      updateIcon(event);
+      if (this.checkForWin()) {
+        this.whosTurn.increaseWins();
+        updateAnnouncerWithWin();
+        updateWinText(this.checkForWin());
+        setTimeout(restartGame, 3000);
+        return;
+      }
+      this.switchPlayer();
+    };
+
+  };
