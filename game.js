@@ -40,21 +40,23 @@ class Game {
 
   updatePlayerSpaces() {
     if (this.whosTurn === nachoPlayer) {
-      this.spacesOccupiedByNacho[event.target.id] = true;
+      nachoPlayer.spacesOccupiedByPlayer.push(event.target.id);
+      nachoPlayer.spacesOccupiedByPlayer;
     } else if (this.whosTurn === esqueletoPlayer) {
-      this.spacesOccupiedByEsq[event.target.id] = true;
+      esqueletoPlayer.spacesOccupiedByPlayer.push(event.target.id);
+      esqueletoPlayer.spacesOccupiedByPlayer;
     }
   };
 
   checkForWin() {
-    for (var i = 0; i < winningGameBoxCombosObj.length; i++) {
-      if(winningGameBoxCombosObj[i] == this.spacesOccupiedByNacho) {
-        console.log('nacho won')
+    for (var i = 0; i < winningGameBoxCombosArray.length; i++) {
+      if(winningGameBoxCombosArray[i].sort().join(',') === nachoPlayer.spacesOccupiedByPlayer.sort().join(',')) {
+        return console.log('nacho won')
       };
     }
     for (var i = 0; i < winningGameBoxCombosObj.length; i++) {
-      if(winningGameBoxCombosObj[i] == this.spacesOccupiedByEsq) {
-        console.log('esq won')
+      if (winningGameBoxCombosArray[i].sort().join(',') === esqueletoPlayer.spacesOccupiedByPlayer) {
+        return console.log('esq won')
       };
     }
   }
