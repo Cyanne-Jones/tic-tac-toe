@@ -20,8 +20,7 @@ class Game {
   };
 
   updateSpacesOccupied(event) {
-    this.spacesOccupied.push({[event.target.id]: [this.whosTurn]});
-    console.log('spacesOccupied', this.spacesOccupied)
+    this.spacesOccupied.push(event.target.id);
     this.whosTurn.spacesOccupiedByPlayer.push(event.target.id);
   };
 
@@ -32,6 +31,12 @@ class Game {
       };
     }
   };
+
+  checkForDraw() {
+    if (this.spacesOccupied.length === 9) {
+      return true;
+    }
+  }
 
   updateWins() {
     this.whosTurn.increaseWins();
@@ -66,17 +71,28 @@ class Game {
       }
     };
 
+    winnerWinnerChickenDinner(winner) {
+      winner.increaseWins();
+      updateAnnouncerWithWin(winner);
+      updateWinText(winner);
+      setTimeout(restartGame, 2000);
+    };
+
+    itsADraw() {
+      updateAnnouncerWithDraw();
+      setTimeout(restartGame, 2000);
+    }
+
     continueTurn(event) {
       this.updateSpacesOccupied(event);
       updateIcon(event);
       if (this.checkForWin()) {
-        this.whosTurn.increaseWins();
-        updateAnnouncerWithWin();
-        updateWinText(this.checkForWin());
-        setTimeout(restartGame, 2000);
-        return;
+        this.winnerWinnerChickenDinner(this.checkForWin())
+      } else if (this.checkForDraw()) {
+        this.itsADraw()
+      } else {
+        this.switchPlayer();
       }
-      this.switchPlayer();
     };
 
   };

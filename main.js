@@ -2,15 +2,6 @@
 var nachoWinsText = document.querySelector('#nachoWins');
 var esqueletoWinsText = document.querySelector('#esqueletoWins');
 var announcer = document.querySelector('#announcer');
-var gameBox1 = document.querySelector('#gameBox1');
-var gameBox2 = document.querySelector('#gameBox2');
-var gameBox3 = document.querySelector('#gameBox3');
-var gameBox4 = document.querySelector('#gameBox4');
-var gameBox5 = document.querySelector('#gameBox5');
-var gameBox6 = document.querySelector('#gameBox6');
-var gameBox7 = document.querySelector('#gameBox7');
-var gameBox8 = document.querySelector('#gameBox8');
-var gameBox9 = document.querySelector('#gameBox9');
 var gameBoxes = document.querySelectorAll('.game-box');
 var gameBoard = document.querySelector('#gameBoard');
 
@@ -42,8 +33,8 @@ function takeATurn(event) {
   game.checkIfOccupiedSpace(event);
 }
 
-function updateAnnouncerWithWin() {
-  announcer.innerText = `${game.whosTurn.id} won!`
+function updateAnnouncerWithWin(winner) {
+  announcer.innerText = `${winner.id} won!`
 }
 
 function updateAnnouncerWithNewPlayer() {
@@ -60,18 +51,16 @@ function updateWinText(winner) {
   } else if (winner === esqueletoPlayer) {
     esqueletoWinsText.innerText = `${esqueletoPlayer.wins} win`
   }
+};
+
+function updateAnnouncerWithDraw() {
+  announcer.innerText = `It's a DRAW!`
 }
 
 function clearGameBoard() {
-  gameBox1.innerHTML = '';
-  gameBox2.innerHTML = '';
-  gameBox3.innerHTML = '';
-  gameBox4.innerHTML = '';
-  gameBox5.innerHTML = '';
-  gameBox6.innerHTML = '';
-  gameBox7.innerHTML = '';
-  gameBox8.innerHTML = '';
-  gameBox9.innerHTML = '';
+  for (var i = 0; i < gameBoxes.length; i++) {
+    gameBoxes[i].innerHTML = '';
+  }
 }
 
 function restartGame() {
