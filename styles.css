@@ -9,7 +9,7 @@ body {
   background-color: rgba(22, 165, 166, 1);
 }
 
-label {
+h2 {
   font-size: 27px;
 }
 
@@ -40,6 +40,10 @@ main,
 .player-text {
   text-align: center;
   padding: 50px;
+}
+
+.player-wins {
+  color: rgba(62, 39, 49, 1);
 }
 
 .player-img {
