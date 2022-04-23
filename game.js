@@ -79,7 +79,7 @@ class Game {
     };
 
     itsADraw() {
-      updateAnnounderWithDraw();
+      updateAnnouncerWithDraw();
       setTimeout(restartGame, 2000);
     }
 
