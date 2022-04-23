@@ -27,8 +27,8 @@ class Game {
   checkForWin() {
     for (var i = 0; i < winningGameBoxCombosArray.length; i++) {
       if (winningGameBoxCombosArray[i].every(element => this.whosTurn.spacesOccupiedByPlayer.includes(element))) {
-        return this.whosTurn
-      };
+        return this.whosTurn;
+      }
     }
   };
 
@@ -36,17 +36,13 @@ class Game {
     if (this.spacesOccupied.length === 9) {
       return true;
     }
-  }
-
-  updateWins() {
-    this.whosTurn.increaseWins();
   };
 
   checkIfOccupiedSpace(event) {
       if ((!this.spacesOccupied.includes(event.target.id)) && (!event.target.classList.contains('game-piece'))) {
         this.continueTurn(event);
       }  else {
-        alert('Choose an empty spot, silly goose!')
+        alert('Choose an empty spot, silly goose!');
       }
     };
 
@@ -55,15 +51,15 @@ class Game {
     };
 
     resetPlayerSpacesOccupied() {
-      nachoPlayer.spacesOccupiedByPlayer = [];
+      nachoPlayer.spacesOccupiedByPlayer = []
       esqueletoPlayer.spacesOccupiedByPlayer = [];
     };
 
     changeWhosFirst() {
       if (nachoPlayer.isFirst) {
         esqueletoPlayer.isFirst = true
-        nachoPlayer.isFirst = false;
-        this.whosTurn = esqueletoPlayer
+        nachoPlayer.isFirst = false
+        this.whosTurn = esqueletoPlayer;
       } else if (esqueletoPlayer.isFirst) {
         nachoPlayer.isFirst = true
         esqueletoPlayer.isFirst = false
@@ -72,24 +68,24 @@ class Game {
     };
 
     winnerWinnerChickenDinner(winner) {
-      winner.increaseWins();
-      updateAnnouncerWithWin(winner);
-      updateWinText(winner);
+      winner.increaseWins()
+      updateAnnouncerWithWin(winner)
+      updateWinText(winner)
       setTimeout(restartGame, 2000);
     };
 
     itsADraw() {
-      updateAnnouncerWithDraw();
+      updateAnnouncerWithDraw()
       setTimeout(restartGame, 2000);
-    }
+    };
 
     continueTurn(event) {
-      this.updateSpacesOccupied(event);
-      updateIcon(event);
+      this.updateSpacesOccupied(event)
+      updateIcon(event)
       if (this.checkForWin()) {
-        this.winnerWinnerChickenDinner(this.checkForWin())
+        this.winnerWinnerChickenDinner(this.checkForWin());
       } else if (this.checkForDraw()) {
-        this.itsADraw()
+        this.itsADraw();
       } else {
         this.switchPlayer();
       }

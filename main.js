@@ -26,24 +26,23 @@ var winningGameBoxCombosArray = [
 ];
 
 //FUNCTIONS
-
 game.startNewGame();
 
 function takeATurn(event) {
   game.checkIfOccupiedSpace(event);
-}
+};
 
 function updateAnnouncerWithWin(winner) {
   announcer.innerText = `${winner.id} won!`
-}
+};
 
 function updateAnnouncerWithNewPlayer() {
   announcer.innerText = `${game.whosTurn.id}'s Turn!`
-}
+};
 
 function updateIcon(event) {
   event.target.innerHTML = game.whosTurn.token;
-}
+};
 
 function updateWinText(winner) {
   if (winner === nachoPlayer) {
@@ -55,13 +54,13 @@ function updateWinText(winner) {
 
 function updateAnnouncerWithDraw() {
   announcer.innerText = `It's a DRAW!`
-}
+};
 
 function clearGameBoard() {
   for (var i = 0; i < gameBoxes.length; i++) {
     gameBoxes[i].innerHTML = '';
   }
-}
+};
 
 function restartGame() {
   game.resetSpacesOccupied();

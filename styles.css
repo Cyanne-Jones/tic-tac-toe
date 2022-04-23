@@ -9,7 +9,7 @@ body {
   background-color: rgba(22, 165, 166, 1);
 }
 
-label {
+h2 {
   font-size: 27px;
 }
 
@@ -42,6 +42,10 @@ main,
   padding: 50px;
 }
 
+.player-wins {
+  color: rgba(62, 39, 49, 1);
+}
+
 .player-img {
   height: 200px;
   width: 200px;
@@ -59,6 +63,12 @@ main,
   grid-auto-rows: minmax(100px, auto);
   height: 60%;
   width: 60%;
+}
+
+.game-box {
+  display: flex;
+  justify-content: center;
+	align-items: center;
 }
 
 .game-box4,
@@ -121,14 +131,4 @@ main,
 .game-piece {
   height: 70px;
   width: 70px;
-}
-
-.game-box {
-  display: flex;
-  justify-content: center;
-	align-items: center;
-}
-
-.game-piece {
-  padding: 15px;
 }
