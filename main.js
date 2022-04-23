@@ -42,8 +42,8 @@ function takeATurn(event) {
   game.checkIfOccupiedSpace(event);
 }
 
-function updateAnnouncerWithWin() {
-  announcer.innerText = `${game.whosTurn.id} won!`
+function updateAnnouncerWithWin(winner) {
+  announcer.innerText = `${winner.id} won!`
 }
 
 function updateAnnouncerWithNewPlayer() {
@@ -60,6 +60,10 @@ function updateWinText(winner) {
   } else if (winner === esqueletoPlayer) {
     esqueletoWinsText.innerText = `${esqueletoPlayer.wins} win`
   }
+};
+
+function updateAnnounderWithDraw() {
+  announcer.innerText = `It's a DRAW!`
 }
 
 function clearGameBoard() {
