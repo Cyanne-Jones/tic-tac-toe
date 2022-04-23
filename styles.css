@@ -61,6 +61,12 @@ main,
   width: 60%;
 }
 
+.game-box {
+  display: flex;
+  justify-content: center;
+	align-items: center;
+}
+
 .game-box4,
 .game-box6 {
   border-top: solid rgba(202, 68, 76, 1) 4px;
@@ -121,14 +127,4 @@ main,
 .game-piece {
   height: 70px;
   width: 70px;
-}
-
-.game-box {
-  display: flex;
-  justify-content: center;
-	align-items: center;
-}
-
-.game-piece {
-  padding: 15px;
 }
