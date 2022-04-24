@@ -22,6 +22,7 @@ class Game {
   updateSpacesOccupied(event) {
     this.spacesOccupied.push(event.target.id);
     this.whosTurn.spacesOccupiedByPlayer.push(event.target.id);
+    removeUnoccupiedStatus(event.target);
   };
 
   checkForWin() {

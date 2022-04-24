@@ -69,3 +69,8 @@ function restartGame() {
   updateAnnouncerWithNewPlayer();
   clearGameBoard();
 };
+
+function removeUnoccupiedStatus(clickedSpace) {
+  clickedSpace.classList.remove('unoccupied-space')
+  clickedSpace.classList.add('occupied-space');
+}

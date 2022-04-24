@@ -132,3 +132,11 @@ main,
   height: 70px;
   width: 70px;
 }
+
+.unoccupied-space:hover {
+  cursor: pointer;
+}
+
+.occupied-space {
+  cursor:not-allowed;
+}
