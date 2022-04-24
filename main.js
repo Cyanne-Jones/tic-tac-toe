@@ -58,7 +58,9 @@ function updateAnnouncerWithDraw() {
 
 function clearGameBoard() {
   for (var i = 0; i < gameBoxes.length; i++) {
-    gameBoxes[i].innerHTML = '';
+    gameBoxes[i].innerHTML = ''
+    gameBoxes[i].classList.remove('occupied-space')
+    gameBoxes[i].classList.add('unoccupied-space');
   }
 };
 
