@@ -70,7 +70,7 @@ class Game {
       }
     };
 
-    winnerWinnerChickenDinner(winner) {
+    win(winner) {
       winner.increaseWins()
       updateAnnouncerWithWin(winner)
       updateWinText(winner)
@@ -78,7 +78,7 @@ class Game {
       setTimeout(restartGame, 2000);
     };
 
-    itsADraw() {
+    draw() {
       cornAudio.play()
       updateAnnouncerWithDraw()
       setTimeout(restartGame, 2000);
@@ -87,9 +87,9 @@ class Game {
     continueTurn(event) {
       this.updateSpacesOccupied(event)
       if (this.checkForWin()) {
-        this.winnerWinnerChickenDinner(this.checkForWin());
+        this.win(this.checkForWin());
       } else if (this.checkForDraw()) {
-        this.itsADraw();
+        this.draw();
       } else {
         this.switchPlayer();
       }

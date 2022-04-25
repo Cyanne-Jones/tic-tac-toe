@@ -79,7 +79,13 @@ p,
 }
 
 .game-piece {
-  width: 80%;
+  width: 70%;
+  animation: incoming 0.5s;
+}
+
+@keyframes incoming{
+  from {transform: scale(2.1) rotate(-45deg)};
+  to {transform: scale(1) rotate(0deg)};
 }
 
 .announcer {
