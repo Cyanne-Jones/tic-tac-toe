@@ -4,13 +4,18 @@ var esqueletoWinsText = document.querySelector('#esqueletoWins');
 var announcer = document.querySelector('#announcer');
 var gameBoxes = document.querySelectorAll('.game-box');
 var gameBoard = document.querySelector('#gameBoard');
+var esqueletoPlayerImage = document.querySelector('#esqPlayerIcon');
+var nachoPlayerImage = document.querySelector('#nachoPlayerIcon');
 var believeInScienceAudio = new Audio('./assets/believe-in-science.mp3');
 var iAmAudio = new Audio('./assets/i-am.mp3');
 var lifeIsGoodAudio = new Audio('./assets/life-is-good.mp3');
-var punchAudio = new Audio('./assets/punch3.mp3');
+var punchAudio = new Audio('./assets/punch.mp3');
 
 //EVENT LISTENERS
 gameBoard.addEventListener('click', takeATurn);
+nachoPlayerImage.addEventListener('click', playIAm)
+esqueletoPlayerImage.addEventListener('click', playIAm);
+
 
 //OBJ INSTANCE DECLARATIONS
 var game = new Game();
@@ -87,4 +92,8 @@ function playWinAudio(winner) {
   } else if (winner === esqueletoPlayer) {
     believeInScienceAudio.play();
   }
+}
+
+function playIAm() {
+  iAmAudio.play();
 }
