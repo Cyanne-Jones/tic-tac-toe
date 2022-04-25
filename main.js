@@ -6,6 +6,8 @@ var gameBoxes = document.querySelectorAll('.game-box');
 var gameBoard = document.querySelector('#gameBoard');
 var esqueletoPlayerImage = document.querySelector('#esqPlayerIcon');
 var nachoPlayerImage = document.querySelector('#nachoPlayerIcon');
+
+//AUDIO FILES
 var believeInScienceAudio = new Audio('./assets/believe-in-science.mp3');
 var iAmAudio = new Audio('./assets/i-am.mp3');
 var lifeIsGoodAudio = new Audio('./assets/life-is-good.mp3');
