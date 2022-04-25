@@ -8,6 +8,7 @@ class Game {
   startNewGame() {
     this.players.push(nachoPlayer, esqueletoPlayer);
     this.whosTurn = nachoPlayer;
+    //iAmAudio.play();
   };
 
   switchPlayer() {
@@ -20,6 +21,8 @@ class Game {
   };
 
   updateSpacesOccupied(event) {
+    punchAudio.play();
+    updateIcon(event)
     this.spacesOccupied.push(event.target.id);
     this.whosTurn.spacesOccupiedByPlayer.push(event.target.id);
     removeUnoccupiedStatus(event.target);
@@ -72,6 +75,7 @@ class Game {
       winner.increaseWins()
       updateAnnouncerWithWin(winner)
       updateWinText(winner)
+      playWinAudio(winner);
       setTimeout(restartGame, 2000);
     };
 
@@ -82,7 +86,6 @@ class Game {
 
     continueTurn(event) {
       this.updateSpacesOccupied(event)
-      updateIcon(event)
       if (this.checkForWin()) {
         this.winnerWinnerChickenDinner(this.checkForWin());
       } else if (this.checkForDraw()) {
