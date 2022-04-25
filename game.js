@@ -8,7 +8,6 @@ class Game {
   startNewGame() {
     this.players.push(nachoPlayer, esqueletoPlayer);
     this.whosTurn = nachoPlayer;
-    //iAmAudio.play();
   };
 
   switchPlayer() {
@@ -80,6 +79,7 @@ class Game {
     };
 
     itsADraw() {
+      cornAudio.play()
       updateAnnouncerWithDraw()
       setTimeout(restartGame, 2000);
     };

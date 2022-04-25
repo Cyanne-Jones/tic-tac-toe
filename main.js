@@ -10,6 +10,7 @@ var believeInScienceAudio = new Audio('./assets/believe-in-science.mp3');
 var iAmAudio = new Audio('./assets/i-am.mp3');
 var lifeIsGoodAudio = new Audio('./assets/life-is-good.mp3');
 var punchAudio = new Audio('./assets/punch.mp3');
+var cornAudio = new Audio('./assets/corn.mp3');
 
 //EVENT LISTENERS
 gameBoard.addEventListener('click', takeATurn);
