@@ -13,6 +13,7 @@ This project was so much fun, and an insane challenge to design from the ground 
 - Adding more animations for a win and a draw
 - Add an instructional popup
 - Different audio clip when you click on Esqueleto
+- Make the game more playable on mobile, tablets and ultra-wide monitors
 
 ## See how it works!
 ![tic-tac-nacho](https://user-images.githubusercontent.com/98280256/165347093-bd5f46bb-477c-460a-8ef7-9c54a57a90ea.gif)
