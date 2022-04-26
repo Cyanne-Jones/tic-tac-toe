@@ -4,9 +4,21 @@ var esqueletoWinsText = document.querySelector('#esqueletoWins');
 var announcer = document.querySelector('#announcer');
 var gameBoxes = document.querySelectorAll('.game-box');
 var gameBoard = document.querySelector('#gameBoard');
+var esqueletoPlayerImage = document.querySelector('#esqPlayerIcon');
+var nachoPlayerImage = document.querySelector('#nachoPlayerIcon');
+
+//AUDIO FILES
+var believeInScienceAudio = new Audio('./assets/believe-in-science.mp3');
+var iAmAudio = new Audio('./assets/i-am.mp3');
+var lifeIsGoodAudio = new Audio('./assets/life-is-good.mp3');
+var punchAudio = new Audio('./assets/punch.mp3');
+var cornAudio = new Audio('./assets/corn.mp3');
 
 //EVENT LISTENERS
 gameBoard.addEventListener('click', takeATurn);
+nachoPlayerImage.addEventListener('click', playIAm)
+esqueletoPlayerImage.addEventListener('click', playIAm);
+
 
 //OBJ INSTANCE DECLARATIONS
 var game = new Game();
@@ -58,7 +70,9 @@ function updateAnnouncerWithDraw() {
 
 function clearGameBoard() {
   for (var i = 0; i < gameBoxes.length; i++) {
-    gameBoxes[i].innerHTML = '';
+    gameBoxes[i].innerHTML = ''
+    gameBoxes[i].classList.remove('occupied-space')
+    gameBoxes[i].classList.add('unoccupied-space');
   }
 };
 
@@ -69,3 +83,20 @@ function restartGame() {
   updateAnnouncerWithNewPlayer();
   clearGameBoard();
 };
+
+function removeUnoccupiedStatus(clickedSpace) {
+  clickedSpace.classList.remove('unoccupied-space')
+  clickedSpace.classList.add('occupied-space');
+}
+
+function playWinAudio(winner) {
+  if (winner === nachoPlayer) {
+    lifeIsGoodAudio.play();
+  } else if (winner === esqueletoPlayer) {
+    believeInScienceAudio.play();
+  }
+}
+
+function playIAm() {
+  iAmAudio.play();
+}

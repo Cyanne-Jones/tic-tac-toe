@@ -3,46 +3,54 @@
   <head>
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <title>Tic Tac NACHO!</title>
+    <link rel="icon" type="image/x-icon" href="./assets/nacho.png">
+    <title>Tic-tac-NACHO!</title>
   </head>
   <body>
+    <header>
+      <h1>Tic Tac Nacho!</h1>
+      <p><em>A Nacho Libre themed treat</em></p>
+      </header>
+    <div class="main-boxes">
     <section class="nacho-section player-section">
       <div class="nacho-text player-text">
-        <h2>NACHO</h2>
+        <h3>NACHO</h3>
         <p class="nacho-wins player-wins" id="nachoWins">0 win</p>
       </div>
-      <img class="nacho-img player-img" alt="nacho-libre-pixel-art" src="./assets/nacho.png">
+      <img class="nacho-img player-img" id= "nachoPlayerIcon" alt="nacho-libre-pixel-art" src="./assets/nacho.png">
     </section>
     <main>
-      <h1 class="announcer" id="announcer">Nacho's Turn!</h1>
+      <h2 class="announcer" id="announcer">Nacho's Turn!</h2>
       <section class="game-board" id="gameBoard">
-        <div class="game-box game-box1" id="gameBox1">
+        <div class="game-box game-box1 unoccupied-space" id="gameBox1">
         </div>
-        <div class="game-box game-box2" id="gameBox2">
+        <div class="game-box game-box2 unoccupied-space" id="gameBox2">
         </div>
-        <div class="game-box game-box3" id="gameBox3">
+        <div class="game-box game-box3 unoccupied-space" id="gameBox3">
         </div>
-        <div class="game-box game-box4" id="gameBox4">
+        <div class="game-box game-box4 unoccupied-space" id="gameBox4">
         </div>
-        <div class="game-box game-box5" id="gameBox5">
+        <div class="game-box game-box5 unoccupied-space" id="gameBox5">
         </div>
-        <div class="game-box game-box6" id="gameBox6">
+        <div class="game-box game-box6 unoccupied-space" id="gameBox6">
         </div>
-        <div class="game-box game-box7" id="gameBox7">
+        <div class="game-box game-box7 unoccupied-space" id="gameBox7">
         </div>
-        <div class="game-box game-box8" id="gameBox8">
+        <div class="game-box game-box8 unoccupied-space" id="gameBox8">
         </div>
-        <div class="game-box game-box9" id="gameBox9">
+        <div class="game-box game-box9 unoccupied-space" id="gameBox9">
         </div>
       </section>
     </main>
     <section class="esqueleto-section player-section">
       <div class="esqueleto-text player-text">
-        <h2>ESQUELETO</h2>
+        <h3>ESQUELETO</h3>
         <p class="esqueleto-wins player-wins" id="esqueletoWins">0 win</p>
       </div>
-      <img class="esqueleto-img player-img" alt="esqueleto-pixel-art" src="./assets/esqueleto.png">
+      <img class="esqueleto-img player-img" id="esqPlayerIcon" alt="esqueleto-pixel-art" src="./assets/esqueleto.png">
     </section>
+  </div>
+  <footer>click on nacho or esqueleto for a little surprise</footer>
     <script type="text/javascript" src="player.js"></script>
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="main.js"></script>

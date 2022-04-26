@@ -20,8 +20,11 @@ class Game {
   };
 
   updateSpacesOccupied(event) {
+    punchAudio.play();
+    updateIcon(event)
     this.spacesOccupied.push(event.target.id);
     this.whosTurn.spacesOccupiedByPlayer.push(event.target.id);
+    removeUnoccupiedStatus(event.target);
   };
 
   checkForWin() {
@@ -67,25 +70,26 @@ class Game {
       }
     };
 
-    winnerWinnerChickenDinner(winner) {
+    win(winner) {
       winner.increaseWins()
       updateAnnouncerWithWin(winner)
       updateWinText(winner)
+      playWinAudio(winner);
       setTimeout(restartGame, 2000);
     };
 
-    itsADraw() {
+    draw() {
+      cornAudio.play()
       updateAnnouncerWithDraw()
       setTimeout(restartGame, 2000);
     };
 
     continueTurn(event) {
       this.updateSpacesOccupied(event)
-      updateIcon(event)
       if (this.checkForWin()) {
-        this.winnerWinnerChickenDinner(this.checkForWin());
+        this.win(this.checkForWin());
       } else if (this.checkForDraw()) {
-        this.itsADraw();
+        this.draw();
       } else {
         this.switchPlayer();
       }
