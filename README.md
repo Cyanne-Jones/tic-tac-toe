@@ -13,4 +13,4 @@ This project was Cyanne Jones' final Mod 1 Solo Project made in 2022 using vanil
 - Different audio clip when you click on Esqueleto
 
 ## See how it works!
-![tic-tac-nacho](https://imgur.com/7cGcOr7)
+![tic-tac-nacho](https://user-images.githubusercontent.com/98280256/165347093-bd5f46bb-477c-460a-8ef7-9c54a57a90ea.gif)
