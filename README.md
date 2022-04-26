@@ -7,7 +7,7 @@ To play this fun game, clone this repository to your computer and open up index.
 
 This project was my final Mod 1 Solo Project made in 2022 using vanilla JavaScript, HTML, CSS and a few audio clips (samples from the Nacho Libre movie, as well as the song Religious Man (I am, I am) by Mister Loco). The pixel sprites were made using Pixel Studio by me as well. You can find my gitHub [here](https://github.com/Cyanne-Jones)! Note: This project was designed to be accessible and can pass the WAVE test.
 
-This project was so much fun, and an insane challenge to design from the ground up. I got COVID halfway through the project, and I have a feeling my coding fever dreams were the biggest help getting this project to be funny funtional
+This project was so much fun, and an insane challenge to design from the ground up. I got COVID halfway through this project, and I have a feeling my coding fever dreams were the biggest help getting this to be fully funtional.
 
 ### Future Ideas for this project:
 - Adding more animations for a win and a draw
