@@ -87,7 +87,7 @@ function restartGame() {
 function removeUnoccupiedStatus(clickedSpace) {
   clickedSpace.classList.remove('unoccupied-space')
   clickedSpace.classList.add('occupied-space');
-}
+};
 
 function playWinAudio(winner) {
   if (winner === nachoPlayer) {
@@ -95,8 +95,8 @@ function playWinAudio(winner) {
   } else if (winner === esqueletoPlayer) {
     believeInScienceAudio.play();
   }
-}
+};
 
 function playIAm() {
   iAmAudio.play();
-}
+};

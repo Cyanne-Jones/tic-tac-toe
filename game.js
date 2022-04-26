@@ -20,10 +20,10 @@ class Game {
   };
 
   updateSpacesOccupied(event) {
-    punchAudio.play();
+    punchAudio.play()
     updateIcon(event)
-    this.spacesOccupied.push(event.target.id);
-    this.whosTurn.spacesOccupiedByPlayer.push(event.target.id);
+    this.spacesOccupied.push(event.target.id)
+    this.whosTurn.spacesOccupiedByPlayer.push(event.target.id)
     removeUnoccupiedStatus(event.target);
   };
 
