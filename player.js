@@ -7,10 +7,10 @@ class Player {
 
     if (this.id === 'Nacho') {
       this.token = `<img class="nacho-game-piece game-piece"
-      alt="nacho-libre-game-piece" src="./assets/nacho.png">`;
+      alt="nacho-libre-game-piece" src="./assets/nacho.PNG">`;
     } else if (this.id === 'Esqueleto') {
       this.token = `<img class="esqueleto-game-piece game-piece"
-      alt="esqueleto-game-piece" src="./assets/esqueleto.png">`;
+      alt="esqueleto-game-piece" src="./assets/esqueleto.PNG">`;
     };
 
   }
